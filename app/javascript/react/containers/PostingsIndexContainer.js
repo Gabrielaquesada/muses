@@ -21,10 +21,12 @@ class PostingsIndexContainer extends Component {
 
   render() {
     let postings = this.state.postings.map(posting => {
+
 	      return(
 	        <PostingTile
 	          key={posting.id}
 	          id={posting.id}
+            user={posting.user_name}
 	          description={posting.description}
 	        />
 	      )
