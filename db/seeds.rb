@@ -10,17 +10,13 @@ User.create(name: 'Lana del Rey', email: 'l.delrey@gmail.com', password: 'passwo
 User.create(name: 'Jimi Hendrix', email: 'j.hendrix@gmail.com', password: 'password')
 User.create(name: 'David Bowie', email: 'd.bowie@gmail.com', password: 'password')
 User.create(name: 'Freddie Mercury', email: 'mercury@gmail.com', password: 'password')
-User.create(name: 'Travis Scott', email: 't.scott@gmail.com', password: 'password')
-User.create(name: 'The Weeknd', email: 'weeknd@gmail.com', password: 'password')
-User.create(name: 'Billy Idol', email: 'billyidle@gmail.com', password: 'password')
 
-Posting.create(user_id: 1, description: 'posting 1')
+
+Posting.create(user_id: 4, description: 'Im looking for a guitarist in San Juan that wants to play some funkcore dream pop')
 Posting.create(user_id: 3, description: 'spaceoddity v.01.34, collab?')
-Posting.create(user_id: 1, description: 'fjkdslas djsaklda vnrjilbf vnjreklwbf')
-Posting.create(user_id: 3, description: 'posting 3')
-Posting.create(user_id: 6, description: 'posting 4')
+Posting.create(user_id: 2, description: 'Looking for someone in Santurce that can make some Latino-disco-synth-trap track')
 
 Comment.create(user_id: 2, posting_id: 2, description: 'what')
-Comment.create(user_id: 1, posting_id: 2, description: 'cool')
-Comment.create(user_id: 3, posting_id: 3, description: 'yeah')
+Comment.create(user_id: 1, posting_id: 2, description: 'we can add synths')
+Comment.create(user_id: 1, posting_id: 3, description: 'cool')
 Comment.create(user_id: 6, posting_id: 1, description: 'chill')
