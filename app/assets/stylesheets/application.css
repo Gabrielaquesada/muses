@@ -15,3 +15,29 @@
  *= require foundation_and_overrides
 
  */
+ .top-bar {
+   background: black;
+   font-family: 'Marvel', sans-serif;
+ }
+
+textarea {
+    width: 400px;
+    height: 100px;
+}
+
+.button-message {
+  background: black;
+}
+
+.button {
+  background: black;
+}
+
+.auth-container {
+  width: 350px;
+  margin: 50px auto;
+  background: rgba(0,0,0,0.8);
+  color: #fff;
+  padding: 50px;
+  border-radius: 20px;
+}
