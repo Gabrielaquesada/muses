@@ -5,3 +5,18 @@
 #
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
+
+User.create(name: 'Lana del Rey', email: 'l.delrey@gmail.com', password: 'password')
+User.create(name: 'Jimi Hendrix', email: 'j.hendrix@gmail.com', password: 'password')
+User.create(name: 'David Bowie', email: 'd.bowie@gmail.com', password: 'password')
+User.create(name: 'Freddie Mercury', email: 'mercury@gmail.com', password: 'password')
+
+
+Posting.create(user_id: 4, description: 'Im looking for a guitarist in San Juan that wants to play some funkcore dream pop')
+Posting.create(user_id: 3, description: 'spaceoddity v.01.34, collab?')
+Posting.create(user_id: 2, description: 'Looking for someone in Santurce that can make some Latino-disco-synth-trap track')
+
+Comment.create(user_id: 2, posting_id: 2, description: 'what')
+Comment.create(user_id: 1, posting_id: 2, description: 'we can add synths')
+Comment.create(user_id: 1, posting_id: 3, description: 'cool')
+Comment.create(user_id: 6, posting_id: 1, description: 'chill')

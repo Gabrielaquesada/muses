@@ -1,24 +1,27 @@
 <!DOCTYPE html>
-<html>
-<head>
-  <title>Muses</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <%= stylesheet_link_tag 'application', media: 'all' %>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <%= javascript_include_tag "vendor/modernizr" %>
-  <%= csrf_meta_tags %>
-   </head>
+    <title><%= content_for?(:title) ? yield(:title) : "Untitled" %></title>
 
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application", 'data-turbolinks-track' => true %>
+    <%= csrf_meta_tags %>
+  </head>
+
+
+   <body>
 
   <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="/">Muses</a></h1>
-      </li>
-    </ul>
+    <div class="top-bar-left">
+          <h1 ><a  class="title" href="/"> Muses</a></h1>
+    </div>
 
-    <section class="top-bar-section">
-      <ul class="right">
+
+    <section class="top-bar-right">
+      <ul class="menu">
         <%- if current_user -%>
           <li><%= link_to 'Sign Out', destroy_user_session_path, method: :delete %></li>
         <%- else -%>
@@ -29,20 +32,11 @@
     </section>
   </nav>
 
-  <div id="app"></div>
-  <script src="bundle.js"></script>
-</body>
-
-</html>
-<%= csrf_meta_tags %>
-</head>
-<body>
   <%- flash.each do |key, value| -%>
     <div class="flash flash-<%= key %>">
       <%= value %>
     </div>
   <%- end -%>
-  <body>
 
   <%= yield %>
 
@@ -56,7 +50,7 @@
   <%= javascript_pack_tag 'application' %>
 
   <%= yield :extra_footer %>
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+  </body>
 
-</body>
-</html>
+
+  </html>
