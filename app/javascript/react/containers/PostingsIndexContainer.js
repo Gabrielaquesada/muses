@@ -1,7 +1,8 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
 import PostingTile from '../components/PostingTile';
-import PostingsFormContainer from './PostingsFormContainer'
+import PostingsFormContainer from './PostingsFormContainer';
+import LinksComponent from '../components/LinksComponent';
 
 class PostingsIndexContainer extends Component {
   constructor(props) {
@@ -48,9 +49,10 @@ class PostingsIndexContainer extends Component {
     })
     .then(responseBody=> responseBody.json())
     .then(responseBody => {
-
+      let newPostings = [responseBody, ...this.state.postings]
       this.setState({
-        postings: this.state.postings.concat(responseBody)
+        // postings: this.state.postings.concat(responseBody)
+        postings: newPostings
       })
     });
   }
@@ -63,6 +65,7 @@ class PostingsIndexContainer extends Component {
 	          key={posting.id}
 	          id={posting.id}
             user={posting.user_name}
+            photo={posting.user_photo}
 	          description={posting.description}
             comments_length={posting.comments.length}
 	        />
@@ -70,13 +73,23 @@ class PostingsIndexContainer extends Component {
 	    })
 
     return (
-      <div>
-        <div>
-        <PostingsFormContainer
-          addNewPostings={this.addNewPostings}/>
-        </div>
-        {postings}
+
+  <div className='something'>
+    <div className='grid-x'>
+      <div className='cell small-3'>
+        <LinksComponent/>
       </div>
+      <div className='cell small-9'>
+        <div className='grid-x grid-padding-y'>
+            <PostingsFormContainer
+              addNewPostings={this.addNewPostings}/>
+        </div>
+        <div className='cell'>
+        {postings}
+        </div>
+      </div>
+    </div>
+    </div>
     )
   }
 }

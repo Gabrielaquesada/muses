@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { browserHistory, Link } from 'react-router';
-import BodyField from '../components/BodyField';
+import CommentField from '../components/CommentField';
 
 
 
@@ -36,15 +36,15 @@ class CommentsFormContainer extends Component {
 
   render() {
 	    return(
-	      <form className="new-posting-form callout" onSubmit={this.handleSubmit}>
-        <BodyField
+	      <form className="comment-field" onSubmit={this.handleSubmit}>
+        <CommentField
 	          content={this.state.description}
-	          label="Post"
+	          label=""
 	          name="Post"
 	          handleChange={this.handleDescriptionChange}
 	        />
-	        <div className="button-group">
-	          <input className="button" type="submit" value="Submit" />
+	        <div className="send-button">
+	          <input className="button" type="submit" value="Comment" />
 	        </div>
 	      </form>
 	    )
