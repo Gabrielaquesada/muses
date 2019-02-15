@@ -33,6 +33,16 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       # t.datetime :locked_at
 
       t.timestamps null: false
+      t.string :profile_photo
+      t.string :location
+      t.float :lat
+      t.float :lng
+      t.text :bio
+      t.string :instruments
+      t.string :influences
+      t.string :links
+      t.string :projects
+      t.string :music_software
     end
 
     add_index :users, :email,                unique: true

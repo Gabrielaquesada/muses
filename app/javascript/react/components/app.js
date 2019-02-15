@@ -3,6 +3,8 @@ import { Route, IndexRoute, Router, browserHistory } from 'react-router';
 import PostingsIndexContainer from '../containers/PostingsIndexContainer';
 import PostingsShowContainer from '../containers/PostingsShowContainer';
 
+
+
 export const App = (props) => {
   return (
     <div>

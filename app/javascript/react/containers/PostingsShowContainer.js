@@ -23,7 +23,7 @@ class PostingsShowContainer extends Component {
         return responseBody;
       })
       .then(responseBody => {
-      
+
         this.setState({
           username: responseBody.user_name,
           description: responseBody.description,
@@ -56,8 +56,9 @@ class PostingsShowContainer extends Component {
     })
     .then(responseBody=> responseBody.json())
     .then(responseBody => {
+      let newComments = [responseBody, ...this.state.comments]
       this.setState({
-        comments: this.state.comments.concat(responseBody)
+        comments: newComments
       })
     });
   }
@@ -66,33 +67,34 @@ class PostingsShowContainer extends Component {
       let comments = this.state.comments.map(comment => {
 
         return(
+          
           <CommentsTile
            key={comment.id}
            id={comment.id}
            user={comment.user_name}
            description={comment.description}
            price={comment.price_rating}
+
           />
         )
       })
   	    return(
           <div>
-          <div>
-          <PostingsShowTile
-          key={this.props.params.id}
-          id={this.props.params.id}
-          username={this.state.username}
-          description={this.state.description}
-          comments={this.state.comments}
-          />
-          </div>
-          <div>
-          <CommentsFormContainer
-            addNewComments={this.addNewComments}/>
-          </div>
-          <div>
-          {comments}
-          </div>
+              <PostingsShowTile
+                key={this.props.params.id}
+                id={this.props.params.id}
+                username={this.state.username}
+                description={this.state.description}
+                comments={this.state.comments}
+              />
+              <div>
+                <CommentsFormContainer
+                  addNewComments={this.addNewComments}
+                />
+              </div>
+              <div>
+              {comments}
+            </div>
           </div>
         )
       }

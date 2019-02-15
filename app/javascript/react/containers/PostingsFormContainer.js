@@ -35,24 +35,24 @@ class PostingsFormContainer extends Component {
   }
 
   render() {
-    return(
-      <div className="status-update-input-box">
-        <form className="" onSubmit={this.handleSubmit}>
+	    return(
+        <div className='cell'>
+	      <form className='grid-x align-center' onSubmit={this.handleSubmit}>
         <BodyField
-          content={this.state.description}
-          label=""
-          name="Post"
-          handleChange={this.handleDescriptionChange}
-        />
+	          content={this.state.description}
+	          label=""
+	          name="Post"
+	          handleChange={this.handleDescriptionChange}
+	        />
+            <div className='cell text-center'>
+	          <input className="button" type="submit" value="Post" />
+            </div>
 
-        <div className="user-submit-box">
-          <input className="button" type="submit" value="Submit" />
+	      </form>
         </div>
-      </form>
-    </div>
-    )
-  }
-}
+	    )
+	  }
+	}
 
 
 export default PostingsFormContainer;

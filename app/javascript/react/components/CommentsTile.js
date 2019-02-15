@@ -3,12 +3,17 @@ import React from 'react';
 const CommentsTile = (props) => {
   return (
 
-
-    <div class="row">
-    <div className="large-2 columns">{props.user}</div>
-    <div className="large-10 columns">{props.description}</div>
-    </div>
-
+    <div className='box'>
+  		<div className='content'>
+  			<div className='name'>
+  				<h5>{props.user}</h5>
+  			</div>
+  		</div>
+  	 <div className='row text'>
+  	 	<br/><p>{props.description}</p>
+  	 </div>
+  	</div>
+  
   );
 }
 
