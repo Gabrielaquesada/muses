@@ -67,7 +67,7 @@ class PostingsShowContainer extends Component {
       let comments = this.state.comments.map(comment => {
 
         return(
-          
+
           <CommentsTile
            key={comment.id}
            id={comment.id}

@@ -3,9 +3,22 @@ Rails.application.routes.draw do
   devise_for :users, controllers: { registrations: "registrations" }
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 
-resources :users, only: [:show, :new, :create]
+  # possibly needed for ActionCable
+   mount ActionCable.server => '/cable'
+
+resources :users
+resources :messages
+
   resources :postings, only: [:index, :show] do
     resources :comments, only: [:index]
+  end
+
+  namespace :api do
+    namespace :v1 do
+      resources :messages, only: [:create, :index]
+      resources :users, only: [:show]
+      get "users/current" => "users#current_user"
+    end
   end
 
 

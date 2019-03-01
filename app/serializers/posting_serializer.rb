@@ -1,5 +1,5 @@
 class PostingSerializer < ActiveModel::Serializer
-  attributes :id, :description, :user_name, :user_photo, :posting_time
+  attributes :id, :description, :user_name, :user_photo, :posting_time, :location
 
   has_many :comments
 
@@ -13,6 +13,10 @@ class PostingSerializer < ActiveModel::Serializer
 
   def posting_time
     object.user.created_at
+  end
+
+  def location
+    object.user.location
   end
 
 end

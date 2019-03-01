@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_05_162731) do
+ActiveRecord::Schema.define(version: 2019_02_17_232623) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "chats", force: :cascade do |t|
+    t.string "title"
+    t.string "description"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "comments", force: :cascade do |t|
     t.text "description", null: false
@@ -23,6 +30,16 @@ ActiveRecord::Schema.define(version: 2019_02_05_162731) do
     t.datetime "updated_at", null: false
     t.index ["posting_id"], name: "index_comments_on_posting_id"
     t.index ["user_id"], name: "index_comments_on_user_id"
+  end
+
+  create_table "messages", force: :cascade do |t|
+    t.string "body", null: false
+    t.bigint "user_id"
+    t.bigint "chat_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["chat_id"], name: "index_messages_on_chat_id"
+    t.index ["user_id"], name: "index_messages_on_user_id"
   end
 
   create_table "postings", force: :cascade do |t|
@@ -43,8 +60,8 @@ ActiveRecord::Schema.define(version: 2019_02_05_162731) do
     t.datetime "updated_at", null: false
     t.string "profile_photo"
     t.string "location"
-    t.float "lat"
-    t.float "lng"
+    t.float "latitude"
+    t.float "longitude"
     t.text "bio"
     t.string "instruments"
     t.string "influences"

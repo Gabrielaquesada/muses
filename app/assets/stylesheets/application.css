@@ -16,11 +16,179 @@
 
  */
 
+ /* my positioning css */
 
+ @import url(https://fonts.googleapis.com/css?family=Roboto:900,300);
+ body {
+   background-color: #f0f0f0;
+   font-family: roboto;
+ }
+ .callout {
+     border-radius: .5rem;
+     background-color: #fefefe;
+     padding: 1rem;
+     width: 100%;
+     border: 1px solid #cacaca;
+     -webkit-box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18), 0 0.125rem 2px rgba(0, 0, 0, 0.36);
+     box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18), 0 0.125rem 2px rgba(0, 0, 0, 0.36);
+ }
+ .column, .columns {
+    padding-left: .625rem;
+    padding-right: .625rem;
+    width: 100%;
+    float: left;
+}
+.input-group-field {
+    border-radius: 0;
+    height: 2.5rem;
+}
+.row.text {
+  margin-right: 20px;
+}
+
+
+.links {
+  margin-top: 82px;
+}
+
+ .container {
+   width: 700px;
+   margin: 120px auto 120px;
+   background-color: #f0f0f0;
+   padding: 0 20px 20px;
+   border-radius: 6px;
+   -webkit-border-radius: 6px;
+   -moz-border-radius: 6px;
+   box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+   -webkit-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+   -moz-box-shadow: 0 2px 5px rgba(0,0,0,0.075);
+   text-align: center;
+   opacity: 0.9;
+  margin-top: 80px;
+ }
+
+ .avatar-flip {
+   border-radius: 100px;
+   overflow: hidden;
+   height: 150px;
+   width: 150px;
+   position: relative;
+   margin: auto;
+   top: -60px;
+   box-shadow: 0 0 0 13px #f0f0f0;
+   -webkit-box-shadow: 0 0 0 13px #f0f0f0;
+   -moz-box-shadow: 0 0 0 13px #f0f0f0;
+ }
+ .avatar-flip img {
+   position: absolute;
+   left: 0;
+   top: 0;
+   border-radius: 100px;
+   transition: all 0.3s ease-in-out;
+   -webkit-transition: all 0.3s ease-in-out;
+   -moz-transition: all 0.3s ease-in-out;
+ }
+ .avatar-flip img:first-child {
+   z-index: 1;
+ }
+ .avatar-flip img:last-child {
+   z-index: 0;
+   transform: rotateY(180deg);
+   -webkit-transform: rotateY(180deg);
+   opacity: 0;
+ }
+ h2 {
+   font-size: 32px;
+   font-weight: 600;
+   margin-bottom: 15px;
+   color: #333;
+ }
+ h4 {
+   font-size: 13px;
+   color: #00baff;
+   letter-spacing: 1px;
+   margin-bottom: 25px
+ }
+ p {
+   font-size: 16px;
+   line-height: 26px;
+   margin-bottom: 20px;
+   color: #666;
+ }
+
+
+
+ .contain {
+    top: 10%;
+    margin-bottom: 20px;
+    margin-left: 150px;
+}
+ ._profile {
+   top: 20%;
+   left: 50%;
+   padding: -5em 0 0 -5em;
+ }
+ img {
+     display: inline-block;
+     vertical-align: middle;
+     max-width: 130%;
+     height: auto;
+     -ms-interpolation-mode: bicubic;
+ }
+ h1, .h1 {
+
+    line-height: 1.4;
+    margin-top: 0;
+    margin-bottom: 1.0rem;
+    margin: auto;
+}
+ /* main icon */
+ ._profile {
+ 	height: 10em; /* height == width */
+ 	width: 10em;
+ 	border: 2px solid #666;
+ 	border-radius: 50%;
+ 	overflow: hidden;
+ }
+ .everything {
+   background-color: black;
+   color: #fff;
+   position:fixed;
+  padding:0;
+  margin:0;
+overflow: auto;
+  top:20;
+  left:20;
+max-height: 100vh;
+  width: 100%;
+
+   opacity: 0.9;
+ }
+ .edit-container {
+   width: 700px;
+   margin: 50px auto;
+   background: black;
+   color: #fff;
+   padding: 50px;
+   border-radius: 20px;
+   opacity: 0.9;
+ }
+
+
+ .grid-container {
+   display: grid;
+   grid-template-columns: auto auto auto;
+ }
+
+ .grid-item {
+  padding: 4px;
+  font-size: 30px;
+ }
 
 .top-bar {
    background-color: black;
    opacity: 0.9;
+
  }
 
 .font {
@@ -40,6 +208,15 @@
 
   font-weight: bold;
   font-size: 35px;
+  background-color: black;
+  text-decoration: none;
+  transition: opacity 150ms ease-in-out;
+}
+.font-autho {
+  color: #fefefe;
+
+
+  font-size: 25px;
   background-color: black;
   text-decoration: none;
   transition: opacity 150ms ease-in-out;
@@ -80,7 +257,8 @@ input#user_email {
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
-    color: #000000;
+    color: white;
+
 }
 
 input#user_password {
@@ -97,7 +275,7 @@ input#user_password {
     font-size: 1rem;
     font-weight: normal;
     line-height: 1.5;
-    color: #000000;
+    color: white;
     border-radius: 30px;
     border: 1px solid #fff;
 }
@@ -115,9 +293,139 @@ input#user_password_confirmation {
   font-size: 1rem;
   font-weight: normal;
   line-height: 1.5;
-  color: #000000;
+  color: white;
   border-radius: 30px;
   border: 1px solid #fff;
+}
+
+input#user_name {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+
+input#user_location {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+input#user_instruments {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+input#user_music_software {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+input#user_influences {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+input#user_projects {
+  display: block;
+
+    box-sizing: border-box;
+    width: 100%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.5rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+}
+input#user_bio {
+  display: block;
+
+    box-sizing: border-box;
+    width: 95%;
+    height: 2.4375rem;
+    margin: 0 0 1rem;
+    padding: 0.01rem;
+    border-radius: 10px;
+    border: 1px solid #fff;
+    background-color:  #564141;
+    box-shadow: inset 0 1px 2px rgba(10, 10, 10, 0.1);
+    font-family: inherit;
+    font-size: 1rem;
+    font-weight: normal;
+    line-height: 1.5;
+    color: white;
+    margin-left: auto;
+ margin-right: auto;
 }
 
 .submit {
@@ -284,10 +592,9 @@ input#user_password_confirmation {
 
 .callout {
   border-radius: .5rem;
-  margin: auto;
   background-color: #fefefe;
   padding: 1rem;
-  width: 50%;
+  width: 100%;
   border: 1px solid #cacaca;
   box-shadow: 0 0.0625rem 0.1875rem rgba(0, 0, 0, 0.18), 0 0.125rem 2px rgba(0, 0, 0, 0.36);
 }

@@ -8,13 +8,13 @@ const LinksComponent = (props) => {
     <a className='font' href={'/users/:id'}>Profile</a>
     </div>
     <div>
-    <a className='font'href={'/'}>Home</a>
+    <a className='font'href={'/users/sign_in'}>Home</a>
     </div>
     <div>
     <a className='font' href={'/postings'}>Feed</a>
     </div>
     <div>
-    <a className='font' href={'/'}>Chatrooms</a>
+    <a className='font' href={'/messages'}>Chatroom</a>
     </div>
 
     </div>

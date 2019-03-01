@@ -1,1 +1,33 @@
+<div class="everything">
+  <div class='grid-container'>
+      <div class="grid-item">
+  <div class="container">
+    <div class="avatar-flip">
+      <%= image_tag "#{@user.profile_photo}" %>
+        <%= image_tag "#{@user.profile_photo}" %>
+    </div>
+    <h2><%= @user.name %></h2>
+    <p><%= @user.location %></p>
+    <p><%= @user.bio %></p>
+    <p><%= @user.instruments %></p>
+    <p><%= @user.influences %></p>
+    <p><%= @user.music_software %></p>
 
+
+  </div>
+  </div>
+
+    <div class="grid-item">
+  <div class="links">
+    <%- if current_user -%>
+  <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=12&size=400x400&key=AIzaSyAELaqzLiJNExfkGSHYMc_kAxYpLJpgf9g" %>
+    <%= link_to 'Update Profile', edit_user_path, class: 'font-form' %>
+      <%- else -%>
+      <%= image_tag "https://maps.googleapis.com/maps/api/staticmap?center=#{@user.latitude},#{@user.longitude}&zoom=12&size=#{ENV["GOOGLE_MAPS_API"]}" %>
+
+        <%- end -%>
+    </div>
+
+  </div>
+
+</div>

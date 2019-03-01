@@ -35,8 +35,8 @@ class DeviseCreateUsers < ActiveRecord::Migration[5.2]
       t.timestamps null: false
       t.string :profile_photo
       t.string :location
-      t.float :lat
-      t.float :lng
+      t.float :latitude
+      t.float :longitude
       t.text :bio
       t.string :instruments
       t.string :influences

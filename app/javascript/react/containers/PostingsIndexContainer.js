@@ -68,6 +68,7 @@ class PostingsIndexContainer extends Component {
             photo={posting.user_photo}
 	          description={posting.description}
             comments_length={posting.comments.length}
+            location={posting.location}
 	        />
 	      )
 	    })
@@ -77,6 +78,7 @@ class PostingsIndexContainer extends Component {
   <div className='something'>
     <div className='grid-x'>
       <div className='cell small-3'>
+
         <LinksComponent/>
       </div>
       <div className='cell small-9'>

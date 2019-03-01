@@ -1,0 +1,54 @@
+<div class="edit-container">
+
+<%= form_for(@user) do |f| %>
+<div class='grid-container'>
+  <div class="field">
+    <%= f.label :name, class: "font-form" %><br />
+    <%= f.text_field :name %>
+  </div>
+</div>
+
+<div class='grid-container'>
+  <div class="field">
+    <%= f.label :location, class: "font-form" %><br />
+    <%= f.text_field :location %>
+  </div>
+</div>
+<div class='grid-container'>
+
+  <div class="grid-item">
+    <%= f.label :instruments, class: "font-form" %><br />
+    <%= f.text_field :instruments %>
+  </div>
+
+  <div class="grid-item">
+    <%= f.label :music_software, class: "font-form" %><br />
+    <%= f.text_field :music_software %>
+  </div>
+</div>
+
+<div class='grid-container'>
+  <div class="grid-item">
+
+    <%= f.label :influences,class: "font-form" %><br />
+    <%= f.text_field :influences %>
+  </div>
+
+  <div class="grid-item">
+    <%= f.label :projects, class: "font-form" %><br />
+    <%= f.text_field :projects %>
+  </div>
+</div>
+
+  <div class="field">
+    <%= f.label :bio, class: "font-form" %><br />
+    <%= f.text_field :bio %>
+  </div>
+
+
+
+  <div class="actions">
+    <%= f.submit "Save", :class => 'submit'  %>
+  </div>
+<% end %>
+</div>
