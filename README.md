@@ -22,7 +22,3 @@ Things you may want to cover:
 
 * Services
   * Rails, React, Foundation 6 from Launch Academy.
-
-* Deployment instructions
-
-* ...
