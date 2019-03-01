@@ -6,18 +6,22 @@ application up and running.
 Things you may want to cover:
 
 * Ruby version
-
-* System dependencies
+  * Must have Ruby 2.4.5
+  * Bundle 2.0
+  * postgres data base on system
 
 * Configuration
+  * Bundle Install
+  * Yarn Install
 
 * Database creation
+  * rake db:setup
 
 * Database initialization
+  * rake db:seed
 
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+* Services
+  * Rails, React, Foundation 6 from Launch Academy.
 
 * Deployment instructions
 
